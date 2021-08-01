@@ -58,9 +58,6 @@ const graphqlResolver = {
     },
     createUser: (args) => {
          return User.findOne({ "email": args['userInput']['email'] }, userFromDB => {
-            if (userFromDB) {
-                throw new Error("User Already Exists"); 
-            } else {
                 return bcrypt.hash(args['userInput']['password'], 12).then(hash => {
                     let newUser = new User({
                         email: args['userInput']['email'],
@@ -72,7 +69,6 @@ const graphqlResolver = {
                 }).catch(err => {
                     throw err;
                 })
-            }
          })
     },
     signIn: (args) => {
