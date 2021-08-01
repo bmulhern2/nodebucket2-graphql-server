@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 
 const Task = require('../models/task');
-const User = require('../models/User');
+const User = require('../models/user');
 
 const graphqlResolver = {
     createTask: (args) => {
