@@ -10,6 +10,7 @@ const graphqlSchema = buildSchema(`
     }
 
     type Task {
+        _id: String!
         task: String!
     }
 
