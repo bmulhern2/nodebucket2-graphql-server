@@ -9,7 +9,7 @@ const graphqlResolver = require('./graphql/resolver');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://bmulhern2:Bmole22%21%21@cluster0.eopst.mongodb.net/nodebucket2?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect(process.env.MONGOURI, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log("MongoDB Connected!");
 });
 
